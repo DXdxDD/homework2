@@ -1,5 +1,4 @@
-# homework2
-GFN
+# GFN
 "Gated Fusion Network for Joint Image Deblurring and Super-Resolution" by Xinyi Zhang, Hang Dong, Zhe Hu, Wei-Sheng Lai, Fei Wang, Ming-Hsuan Yang(oral presentation on BMVC2018).
 
 [arXiv][Slide]
@@ -8,7 +7,7 @@ There are more details you can find on Project Website : http://xinyizhang.tech/
 
 Archi heatmap
 
-Inproved the training process
+## Inproved the training process
 In order to obtain a more stable training process, now we adopt a three-step training strategy, which differs from our paper and improves PSNR from 27.74dB to 27.81dB on LR-GOPRO 4x dataset.
 
 Model	LR-GOPRO 4x PSNR(dB)	Time(s)
