@@ -33,9 +33,11 @@ GFN/$python test.py --dataset your_downloads_directory/SOTS/Validation_4x
 ```
 Then the dehazing and super-solving images ending with GFN_4x.png are in the directory of SOTS/Validation/Results.
 
-6. Calculate the PSNR using Matlab function GFN/evaluation/evaluate_SR.m. The output of the average PSNR is 25.77 dB. 
+6. Calculate the PSNR using Matlab function GFN/evaluation/evaluate_SR.m. The output of the average PSNR is 25.77 dB.
+``` 
 >> folder = 'your_downloads_directory/SOTS';
 >> evaluate_SR(folder)
+```
 ## Citation
 If you use these models in your research, please cite:
 ```
