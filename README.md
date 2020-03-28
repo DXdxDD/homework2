@@ -13,12 +13,29 @@
 * MATLAB
 ## Train For Dehazing
 ## Test For Dehazing
-1. Download the Pretrained model on RESIDE and Test set to `GFN/Hazy/models/3 `and `GFN/Hazy/folder`, respectively.
+1. Git clone this repository.
+```
+$git clone https://github.com/BookerDeWitt/GFN-IJCV.git
+$cd GFN
+```
+2. Download the SOTS dataset from Google Drive.
+3. Generate the validation images of SOTS dataset: Run matlab function `GFN/Hazy/h5_generator/LR_RESIDE_Test.m`. The generated test images will be stored in your_downloads_directory/Validation_4x.
+(If you don't have access to MATLAB, we offer a validation dataset for testing. You can download it from GoogleDrive or Pan Baidu.)
+```
+>> folder = 'your_downloads_directory/SOTS'; # You should replace the your_downloads_directory by your GOPRO_Large's directory.
+>> LR_RESIDE_Test(folder)
+```
+4. Download the trained model GFN_epoch_55.pkl from here, then unzip and move the GFN_epoch_55.pkl to GFN/models folder.
 
-2. Run the `GFN/Hazy/test.py` with cuda on command line:
+5. Run the GFN/test_GFN_x4.py with cuda on command line:
+```
+GFN/$python test_GFN_x4.py --dataset your_downloads_directory/GOPRO_Large/Validation_4x
+```
+Then the deblurring and super-solving images ending with GFN_4x.png are in the directory of GOPRO_Large/Validation/Results.
 
-MSBDN-DFF/$python test.py --checkpoint path_to_pretrained_model
-3 .The dehazed images will be saved in the directory of the test set.
+6. Calculate the PSNR using Matlab function GFN/evaluation/test_RGB.m. The output of the average PSNR is 27.810232 dB. You can also use the GFN/evaluation/test_bicubic.m to calculate the bicubic method.
+>> folder = 'your_downloads_directory/GOPRO_Large';
+>> test_RGB(folder)
 ## Citation
 If you use these models in your research, please cite:
 ```
