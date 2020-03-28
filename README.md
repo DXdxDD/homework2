@@ -16,10 +16,11 @@
 
 ## Citation
 If you use these models in your research, please cite:
-
-@conference{Zhang2018,
-	author = {Xinyi Zhang and Hang Dong and Zhe Hu and Wei-Sheng Lai and Fei Wang and Ming-Hsuan Yang},
-	title = {Gated Fusion Network for Degraded Image Super Resolution},
-	booktitle = {IJCV},
-	year = {2019}
+```
+@conference{Zhang2018,<br>
+	author = {Xinyi Zhang and Hang Dong and Zhe Hu and Wei-Sheng Lai and Fei Wang and Ming-Hsuan Yang},<br>
+	title = {Gated Fusion Network for Degraded Image Super Resolution},<br>
+	booktitle = {IJCV},<br>
+	year = {2019}<br>
 }
+```
