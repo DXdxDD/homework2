@@ -11,9 +11,14 @@
 * skimage
 * h5py
 * MATLAB
-## Train
-## Test
+## Train For Dehazing
+## Test For Dehazing
+1. Download the Pretrained model on RESIDE and Test set to `GFN/Hazy/models/3 `and `GFN/Hazy/folder`, respectively.
 
+2. Run the `GFN/Hazy/test.py` with cuda on command line:
+
+MSBDN-DFF/$python test.py --checkpoint path_to_pretrained_model
+3 .The dehazed images will be saved in the directory of the test set.
 ## Citation
 If you use these models in your research, please cite:
 ```
