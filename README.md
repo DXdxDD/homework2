@@ -12,6 +12,28 @@
 * h5py
 * MATLAB
 ## Train For Dehazing
+### Train on RESIDE dataset
+You should accomplish the first two steps in Test on LR-GOPRO Validation before the following steps.
+
+
+1. Generate the train hdf5 files of RESIDE dataset: Run the matlab function `LR_RESIDE_HDF5_Generator.m` which is in the directory of `GFN/Hazy/h5_generator`. The generated hdf5 files are stored in the your_downloads_directory/RESIDE_train256_4x_HDF5.
+```
+>> folder = 'your_downloads_directory/RESIDE';
+>> LR_RESIDE_HDF5_Generator(folder)
+```
+2. Run the `GFN/Hazy/train.py` with cuda on command line:
+```
+GFN/$python train.py --dataset your_downloads_directory/RESIDE/RESIDE_train256_4x_HDF5
+```
+3. The three step intermediate models will be respectively saved in `models/1/` `models/2` and `models/3`. You can also use the following command to test the intermediate results during the training process. Run the `GFN/Hazy/test.py` with cuda on command line:
+```
+GFN/$python test_GFN_x4.py --dataset your_downloads_directory/GOPRO_Large/Validation_4x --intermediate_process models/1/GFN_epoch_30.pkl # We give an example of step1 epoch30. You can replace another pkl file in models/.
+```
+#### Resume training from breakpoints
+Since the training process will take 3 or 4 days, you can use the following command to resume the training process from any breakpoints. Run the GFN/Hazy/train.py with cuda on command line:
+```
+GFN/$python train.py --dataset your_downloads_directory/RESIDE/RESIDE_train256_4x_HDF5 --resume models/1/GFN_epoc
+```
 ## Test For Dehazing
 1. Git clone this repository.
 ```
@@ -33,7 +55,7 @@ GFN/$python test.py --dataset your_downloads_directory/SOTS/Validation_4x
 ```
 Then the dehazing and super-solving images ending with GFN_4x.png are in the directory of SOTS/Validation/Results.
 
-6. Calculate the PSNR using Matlab function GFN/evaluation/evaluate_SR.m. The output of the average PSNR is 25.77 dB.
+6. Calculate the PSNR using Matlab function GFN/evaluation/evaluate_SR.m. The output of the average PSNR is 25.77456 dB.
 ``` 
 >> folder = 'your_downloads_directory/SOTS';
 >> evaluate_SR(folder)
