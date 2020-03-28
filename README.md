@@ -13,7 +13,7 @@
 * MATLAB
 ## Train For Dehazing
 ### Train on RESIDE dataset
-You should accomplish the first two steps in Test on LR-GOPRO Validation before the following steps.
+You should accomplish the first two steps in Test on SOTS Validation before the following steps.
 
 
 1. Generate the train hdf5 files of RESIDE dataset: Run the matlab function `LR_RESIDE_HDF5_Generator.m` which is in the directory of `GFN/Hazy/h5_generator`. The generated hdf5 files are stored in the your_downloads_directory/RESIDE_train256_4x_HDF5.
