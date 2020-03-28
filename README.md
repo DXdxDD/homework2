@@ -1,12 +1,16 @@
 # GFN
-"Gated Fusion Network for Joint Image Deblurring and Super-Resolution" by Xinyi Zhang, Hang Dong, Zhe Hu, Wei-Sheng Lai, Fei Wang, Ming-Hsuan Yang(oral presentation on BMVC2018).
+"Gated Fusion Network for Degraded Image Super Resolution" by Xinyi Zhang, Hang Dong, Zhe Hu, Wei-Sheng Lai, Fei Wang, Ming-Hsuan Yang(IJCV2019).
 
 [arXiv][Slide]
 
-There are more details you can find on Project Website : http://xinyizhang.tech/bmvc2018.
-
-Archi heatmap
-
+## Dependencies
+* Python 3.6
+* PyTorch >= 1.1.0
+* torchvision
+* numpy
+* skimage
+* h5py
+* MATLAB
 ## Inproved the training process
 In order to obtain a more stable training process, now we adopt a three-step training strategy, which differs from our paper and improves PSNR from 27.74dB to 27.81dB on LR-GOPRO 4x dataset.
 
