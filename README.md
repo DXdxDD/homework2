@@ -27,7 +27,7 @@ GFN/$python train.py --dataset your_downloads_directory/RESIDE/RESIDE_train256_4
 ```
 3. The three step intermediate models will be respectively saved in `models/1/` `models/2` and `models/3`. You can also use the following command to test the intermediate results during the training process. Run the `GFN/Hazy/test.py` with cuda on command line:
 ```
-GFN/$python test_GFN_x4.py --dataset your_downloads_directory/GOPRO_Large/Validation_4x --intermediate_process models/1/GFN_epoch_30.pkl # We give an example of step1 epoch30. You can replace another pkl file in models/.
+GFN/$python test.py --dataset your_downloads_directory/RESIDE/Validation_4x --intermediate_process models/1/GFN_epoch_30.pkl # We give an example of step1 epoch30. You can replace another pkl file in models/.
 ```
 #### Resume training from breakpoints
 Since the training process will take 3 or 4 days, you can use the following command to resume the training process from any breakpoints. Run the GFN/Hazy/train.py with cuda on command line:
